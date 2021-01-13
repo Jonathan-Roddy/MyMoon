@@ -1,30 +1,14 @@
 package com.mad.mymoon;
 
-import android.app.DatePickerDialog;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.DatePicker;
-
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.storage.FileDownloadTask;
-import com.mad.mymoon.ui.AR.ARFragment;
-import com.mad.mymoon.ui.Phases.PhasesFragment;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.util.Calendar;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Dashboard extends AppCompatActivity {
 
