@@ -120,6 +120,7 @@ public class AugmentedMoon extends AppCompatActivity {
 
         });
 
+        // Testing to see if I can use the HD Moon Locally - 512mb size on Firebase
 //        ModelRenderable.builder()
 //                .setSource(this, Uri.parse("Moon_HD.glb"))
 //                .build()
