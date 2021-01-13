@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyMoon</string>
+    <string name="todo">TODO</string>
+    <string name="lets_go_explore">Lets go explore!</string>
+    <string name="my_moon">My Moon</string>
+    <string name="title_activity_dashboard">MainActivity</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_ar">AR</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_phases">Moon Phases</string>
+
+</resources>
