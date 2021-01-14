@@ -46,3 +46,11 @@ I started developing this project on the 2nd of Januray and here is what is done
 + Started Moon Phases Fragment - Conway Algorithm
 + Uploaded project to Github
 ```
+
+Week  - 13/01/2021
+I started developing this project on the 2nd of Januray and here is what is done to date.
+```diff
++ Added the calender login to the Moon Phase fragment
++ Percentage are now reflecting the days chosen on the calendar by the user
++ Changed the default theme to DayNight(Dark Themed)
+```
