@@ -28,6 +28,7 @@ public class PhasesFragment extends Fragment {
     Button chosenDate;
     static TextView todaysDate;
     static TextView todaysDate2;
+    static TextView moonPhaseText;
     static Date Date = new Date();
 
     static int year;
@@ -38,7 +39,8 @@ public class PhasesFragment extends Fragment {
     static int chosenYear;
     static double newPercantage2;
 
-    List<String> moonPhase = new ArrayList<String>(){{
+
+    static List<String> moonPhase = new ArrayList<String>(){{
         add("New Moon");
         add("Waning Crescent");
         add("Last Quarter");
@@ -48,7 +50,7 @@ public class PhasesFragment extends Fragment {
         add("First Quarter");
         add("Waxing Crescent");
     }};
-    String test;
+    static String test;
 
     private static double currentPercentage = 0.0;
 
@@ -60,8 +62,11 @@ public class PhasesFragment extends Fragment {
         // Display Today's Date
         todaysDate = (TextView) root.findViewById(R.id.txtTodaysDate);
         todaysDate2 = (TextView) root.findViewById(R.id.txtTodaysDate2);
+        moonPhaseText = (TextView) root.findViewById(R.id.txtMoonPhase);
+
         todaysDate.setText("Choose a date");
         todaysDate2.setVisibility(View.INVISIBLE);
+        moonPhaseText.setVisibility(View.INVISIBLE);
 
 //        getTodaysDate();
 
@@ -115,13 +120,13 @@ public class PhasesFragment extends Fragment {
     }
 
     // Calculate Algorithm for Lunar Phases
-    public static final void calculateBasedOnAlgorithmToday(int year, int month, int day) {
-//        int days = 0;
-//        days = Conway(year, month, day);
-//        updatePercentageBasedOnDays(days);
-//        updatetodaydate2();
-//        setPhotoBasedOnPercentage();
-    }
+//    public static final void calculateBasedOnAlgorithmToday(int year, int month, int day) {
+////        int days = 0;
+////        days = Conway(year, month, day);
+////        updatePercentageBasedOnDays(days);
+////        updatetodaydate2();
+////        setPhotoBasedOnPercentage();
+//    }
 
     // Calculate Algorithm for Lunar Phases
     public static final void calculateBasedOnAlgorithm(int year, int month, int day) {
@@ -130,10 +135,97 @@ public class PhasesFragment extends Fragment {
         updatePercentageBasedOnDays(days);
         System.out.println("/////////////// Chosen " + currentPercentage);
 
+        currentPercentage+=currentPercentage;
         todaysDate2.setVisibility(View.VISIBLE);
-        todaysDate2.setText("Percentage this night is : " + currentPercentage +"%");
+        if(currentPercentage<=50)
+            todaysDate2.setText("Percentage this night is : " + currentPercentage+"%");
+        else {
+            double test = currentPercentage -100;
+            double a = 100-test;
+            todaysDate2.setText("Percentage this night is : " + a +"%");
+        }
 //        updatetodaydate2();
 //        setPhotoBasedOnPercentage();
+
+        moonPhaseText.setVisibility(View.VISIBLE);
+        switch((int) currentPercentage){
+                // New Moon
+            case 0: moonPhaseText.setText(moonPhase.get(0));
+                break;
+
+                // Waning Crescent
+            case 3: moonPhaseText.setText(moonPhase.get(1));
+                break;
+            case 7: moonPhaseText.setText(moonPhase.get(1));
+                break;
+            case 10: moonPhaseText.setText(moonPhase.get(1));
+                break;
+            case 13: moonPhaseText.setText(moonPhase.get(1));
+                break;
+            case 17: moonPhaseText.setText(moonPhase.get(1));
+                break;
+            case 20: moonPhaseText.setText(moonPhase.get(1));
+                break;
+
+                // Last Quarter
+            case 23: moonPhaseText.setText(moonPhase.get(2));
+                break;
+            case 27: moonPhaseText.setText(moonPhase.get(2));
+                break;
+
+                // Waning Gibbous
+            case 30: moonPhaseText.setText(moonPhase.get(3));
+                break;
+            case 33: moonPhaseText.setText(moonPhase.get(3));
+                break;
+            case 37: moonPhaseText.setText(moonPhase.get(3));
+                break;
+            case 40: moonPhaseText.setText(moonPhase.get(3));
+                break;
+            case 43: moonPhaseText.setText(moonPhase.get(3));
+                break;
+            case 47: moonPhaseText.setText(moonPhase.get(3));
+                break;
+
+                // Full Moon
+            case 50: moonPhaseText.setText(moonPhase.get(4));
+                break;
+
+                //Waxing Gibbous
+            case 53: moonPhaseText.setText(moonPhase.get(5));
+                break;
+            case 57: moonPhaseText.setText(moonPhase.get(5));
+                break;
+            case 60: moonPhaseText.setText(moonPhase.get(5));
+                break;
+            case 63: moonPhaseText.setText(moonPhase.get(5));
+                break;
+            case 67: moonPhaseText.setText(moonPhase.get(5));
+                break;
+            case 70: moonPhaseText.setText(moonPhase.get(5));
+                break;
+
+                // First Quarter
+            case 73: moonPhaseText.setText(moonPhase.get(6));
+                break;
+            case 77: moonPhaseText.setText(moonPhase.get(6));
+                break;
+
+                //Waxing Crescent
+            case 80: moonPhaseText.setText(moonPhase.get(7));
+                break;
+            case 83: moonPhaseText.setText(moonPhase.get(7));
+                break;
+            case 87: moonPhaseText.setText(moonPhase.get(7));
+                break;
+            case 90: moonPhaseText.setText(moonPhase.get(7));
+                break;
+            case 93: moonPhaseText.setText(moonPhase.get(7));
+                break;
+            case 97: moonPhaseText.setText(moonPhase.get(7));
+                break;
+        }
+
     }
 
 

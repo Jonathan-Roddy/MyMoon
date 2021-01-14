@@ -53,4 +53,6 @@ I started developing this project on the 2nd of Januray and here is what is done
 + Added the calender login to the Moon Phase fragment
 + Percentage are now reflecting the days chosen on the calendar by the user
 + Changed the default theme to DayNight(Dark Themed)
++ Moon Phases now shows the type of moon on any given date
++ Moon Phases now shows how illumination it will be at night
 ```
