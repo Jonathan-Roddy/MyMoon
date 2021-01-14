@@ -1,37 +1,22 @@
 package com.mad.mymoon.ui.Phases;
 
-import android.app.DatePickerDialog;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.google.android.gms.dynamic.SupportFragmentWrapper;
-import com.mad.mymoon.AugmentedMoon;
 import com.mad.mymoon.DatePickerFragment;
-import com.mad.mymoon.MainActivity;
 import com.mad.mymoon.R;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-
-import kotlin.jvm.internal.Intrinsics;
 
 public class PhasesFragment extends Fragment {
 
@@ -40,17 +25,28 @@ public class PhasesFragment extends Fragment {
     // Variables
     Button chosenDate;
     TextView todaysDate;
+    static TextView todaysDate2;
     Date Date = new Date();
 
-    private double currentPercantage;
+    static int chosenDay;
+    static int chosenMonth;
+    static int chosenYear;
+
+    String test;
+
+    private static double currentPercantage;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         phasesViewModel = new ViewModelProvider(this).get(PhasesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_phases, container, false);
 
+
         // Display Today's Date
         todaysDate = (TextView) root.findViewById(R.id.txtTodaysDate);
         getTodaysDate();
+
+        todaysDate2 = (TextView) root.findViewById(R.id.txtTodaysDate2);
+        todaysDate2.setText("Percentage this night is : " + currentPercantage +"%");
 
         // Button to get chosen date
         chosenDate = (Button) root.findViewById(R.id.btnDate);
@@ -61,21 +57,51 @@ public class PhasesFragment extends Fragment {
                 DialogFragment datePicker = new DatePickerFragment();
                 datePicker.show(getParentFragmentManager() , "date picker");
 
-
             }
 
         });
 
-
         return root;
     }
 
+    private static void updatetodaydate2() {
+//        todaysDate2.setText("Percentage this night is : " + currentPercantage +"%");
+        System.out.println("/////////////// updatetodaydate2 " + currentPercantage);
+        double newPercantage = currentPercantage;
+        todaysDate2.setText("Percentage this night is : " + newPercantage +"%");
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+
     // Display Today's Date
     private void getTodaysDate() {
+        // Set percentage for tonights Moon
+        Date today = new Date();
+        int year, month, day;
+        year = today.getYear();
+        month = today.getMonth();
+        day = today.getDay();
+        calculateBasedOnAlgorithm(year, month, day);
+
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         String formattedDate = formatter.format(Date);
         todaysDate.setText("Date: " + formattedDate);
     }
+
+    // Calculate Algorithm for Lunar Phases
+    public static final void calculateBasedOnAlgorithm(int year, int month, int day) {
+        int days = 0;
+        days = Conway(year, month, day);
+        updatePercentageBasedOnDays(days);
+        System.out.println("/////////////// " + currentPercantage);
+        updatetodaydate2();
+    }
+
 
     // John Horton Conways algorithm to find lunar phases
 
@@ -111,7 +137,7 @@ public class PhasesFragment extends Fragment {
     // Conway also gives refinements for the leap year cycle and also
     // for the slight variations in the lengths of months; what I have
     // given should be good to +/- a day or so.
-    public final int Conway(int year, int month, int day) {
+    public static final int Conway(int year, int month, int day) {
         double r = (double)(year % 100);
         r %= (double)19;
         if (r > (double)9) {
@@ -135,18 +161,20 @@ public class PhasesFragment extends Fragment {
         return r < (double)0 ? (int)(r + (double)30) : (int)r;
     }
 
-    public final void calculateBasedOnAlgorithm(int year, int month, int day) {
-        int days = 0;
-        days = Conway(year, month, day);
-
-        this.updatePercentageBasedOnDays(days);
-        System.out.println("/////////////// " + currentPercantage);
-    }
-    public final void updatePercentageBasedOnDays(int day) {
+    // Update Percentage
+    public static final void updatePercentageBasedOnDays(int day) {
         int days = 30;
         double p = (double)day * 100.0D / (double)days;
         boolean var5 = false;
-        this.currentPercantage = Math.rint(p);
+        currentPercantage = Math.rint(p);
     }
 
+
+    public static void getDates(int dayOfMonth, int month, int year) {
+        chosenDay = dayOfMonth;
+        chosenMonth = month;
+        chosenYear = year;
+        System.out.println("//////////////// SUPERMASSIVE " + chosenDay + chosenMonth + chosenYear);
+        calculateBasedOnAlgorithm(chosenYear, chosenMonth, chosenDay);
+    }
 }

@@ -2,12 +2,15 @@ package com.mad.mymoon;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
+
+import com.mad.mymoon.ui.Phases.PhasesFragment;
 
 import java.util.Calendar;
 
@@ -31,5 +34,8 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     private void populateSetDate(int year, int month, int dayOfMonth) {
         TextView todaysDate= (TextView)getActivity(). findViewById(R.id.txtTodaysDate);
         todaysDate.setText("Date: " + dayOfMonth+ "-"+ month +"-"+year);
+
+        PhasesFragment pf = (PhasesFragment) getParentFragmentManager().findFragmentById(R.id.fragment_phases);
+        pf.getDates(dayOfMonth, month,year);
     }
 }
