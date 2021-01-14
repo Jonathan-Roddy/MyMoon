@@ -16,7 +16,7 @@ MyMoon is an Android application that utilised both Augmented Reality and Text-t
 ### Design's
 
 Wireframe: 
-![Basic Wireframe](https://github.com/Jonathan-Roddy/MyMoon/blob/master/Moon_DrawIO.png "Wireframe")
+![Basic Wireframe](https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Moon_DrawIO.png "Wireframe")
 
 ***
 ### Technologies Used to Date
