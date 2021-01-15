@@ -1,0 +1,42 @@
+0 = nm
+3 = WanC
+7 = WanC
+10 = WanC
+13 = WanC
+17 = WanC
+20 = WanC
+23 = FirQ
+27 = FirQ
+30 = WanG
+33 = WanG
+37 = WanG
+40 = WanG
+43 = WanG
+47 = WanG 
+50 = fm
+53 = WaxG
+57 = WaxG
+60 = WaxG
+63 = WaxG
+67 = WaxG
+70 = WaxG
+73 = lQ
+77 = lQ
+80 = WaxC
+83 = WaxC
+87 = WaxC
+90 = WaxC
+93 = WaxC
+97 = WaxC
+
+
+static List<String> moonPhase = new ArrayList<String>(){{
+    0    add("New Moon");
+    1    add("Waning Crescent");
+    2    add("Last Quarter");
+    3    add("Waning Gibbous");
+    4    add("Full Moon");
+    5    add("Waxing Gibbous");
+    6    add("First Quarter");
+    7    add("Waxing Crescent");
+    }};

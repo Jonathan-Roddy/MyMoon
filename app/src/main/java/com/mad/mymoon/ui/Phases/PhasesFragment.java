@@ -1,10 +1,19 @@
+
 package com.mad.mymoon.ui.Phases;
 
+import android.app.Application;
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +24,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.mad.mymoon.DatePickerFragment;
 import com.mad.mymoon.R;
 
-import java.text.SimpleDateFormat;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,6 +39,8 @@ public class PhasesFragment extends Fragment {
     Button chosenDate;
     static TextView todaysDate;
     static TextView todaysDate2;
+    static TextView moonPhaseText;
+    static ImageView ivMoon;
     static Date Date = new Date();
 
     static int year;
@@ -37,18 +50,21 @@ public class PhasesFragment extends Fragment {
     static int chosenMonth;
     static int chosenYear;
     static double newPercantage2;
+    private static Context context;
+    static int num =50;
 
-    List<String> moonPhase = new ArrayList<String>(){{
+
+    static List<String> moonPhase = new ArrayList<String>() {{
         add("New Moon");
-        add("Waning Crescent");
-        add("Last Quarter");
-        add("Waning Gibbous");
-        add("Full Moon");
-        add("Waxing Gibbous");
-        add("First Quarter");
         add("Waxing Crescent");
+        add("First Quarter");
+        add("Waxing Gibbous");
+        add("Full Moon");
+        add("Waning Gibbous");
+        add("Last Quarter");
+        add("Waning Crescent");
     }};
-    String test;
+    static String test;
 
     private static double currentPercentage = 0.0;
 
@@ -56,12 +72,16 @@ public class PhasesFragment extends Fragment {
         phasesViewModel = new ViewModelProvider(this).get(PhasesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_phases, container, false);
 
-
         // Display Today's Date
         todaysDate = (TextView) root.findViewById(R.id.txtTodaysDate);
         todaysDate2 = (TextView) root.findViewById(R.id.txtTodaysDate2);
+        moonPhaseText = (TextView) root.findViewById(R.id.txtMoonPhase);
+        ivMoon = (ImageView) root.findViewById(R.id.ivMoon);
+
+
         todaysDate.setText("Choose a date");
         todaysDate2.setVisibility(View.INVISIBLE);
+        moonPhaseText.setVisibility(View.INVISIBLE);
 
 //        getTodaysDate();
 
@@ -72,13 +92,20 @@ public class PhasesFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 DialogFragment datePicker = new DatePickerFragment();
-                datePicker.show(getParentFragmentManager() , "date picker");
+                datePicker.show(getParentFragmentManager(), "date picker");
 
             }
-
         });
+        System.out.println("///////// num " + num);
+
+//        ivMoon.setImageBitmap(ImageViaAssets("north - Copy/0.png"));
+
 
         return root;
+    }
+
+    public static Context getAppContext() {
+        return PhasesFragment.context;
     }
 
     // Display Today's Date
@@ -100,6 +127,14 @@ public class PhasesFragment extends Fragment {
 //        newPercantage2 = currentPercentage;
 //        todaysDate2.setText("Percentage this night is : " + newPercantage2 +"%");
 //    }
+// Calculate Algorithm for Lunar Phases
+//    public static final void calculateBasedOnAlgorithmToday(int year, int month, int day) {
+////        int days = 0;
+////        days = Conway(year, month, day);
+////        updatePercentageBasedOnDays(days);
+////        updatetodaydate2();
+////        setPhotoBasedOnPercentage();
+//    }
 
     @Override
     public void onResume() {
@@ -110,33 +145,228 @@ public class PhasesFragment extends Fragment {
     // Update Percentage
     public static final void updatePercentageBasedOnDays(int day) {
         int days = 30;
-        double p = (double)day * 100.0D / (double)days;
+        double p = (double) day * 100.0D / (double) days;
         currentPercentage = Math.rint(p);
     }
 
-    // Calculate Algorithm for Lunar Phases
-    public static final void calculateBasedOnAlgorithmToday(int year, int month, int day) {
-//        int days = 0;
-//        days = Conway(year, month, day);
-//        updatePercentageBasedOnDays(days);
-//        updatetodaydate2();
-//        setPhotoBasedOnPercentage();
-    }
 
     // Calculate Algorithm for Lunar Phases
     public static final void calculateBasedOnAlgorithm(int year, int month, int day) {
         int days = 0;
         days = Conway(year, month, day);
         updatePercentageBasedOnDays(days);
-        System.out.println("/////////////// Chosen " + currentPercentage);
 
+//        System.out.println("/////////////// Chosen " + currentPercentage);
+
+        //Pass your image name which you have copy inside assets folder here with image extension.
+//        ivMoon.setImageBitmap(ImageViaAssets("100.png"));
+
+//        // Update image
+//        AssetManager assetManager = getAssets();
+//        ImageView imageView = (ImageView) findViewById(R.id.iv_image);
+//        try {
+//            InputStream ims = assetManager.open("my_image.jpg");
+//            Drawable d = Drawable.createFromStream(ims, null);
+//            imageView.setImageDrawable(d);
+//        } catch (IOException ex) {
+//            return;
+//        }
+
+
+//        currentPercentage+=currentPercentage;
         todaysDate2.setVisibility(View.VISIBLE);
-        todaysDate2.setText("Percentage this night is : " + currentPercentage +"%");
+        if (currentPercentage < 51)
+            todaysDate2.setText("Percentage this night is : " + currentPercentage * 2 + "%");
+        else {
+            double test1 = currentPercentage;
+//            System.out.println("//////////////////// Test 1 "+test1);
+            double test = currentPercentage * 2 - 100;
+            double a = 100 - test;
+            todaysDate2.setText("Percentage this night is : " + a + "%");
+        }
 //        updatetodaydate2();
 //        setPhotoBasedOnPercentage();
+
+        moonPhaseText.setVisibility(View.VISIBLE);
+        checkMoonPhase();
+
     }
 
+    private static void checkMoonPhase() {
+        switch ((int) currentPercentage) {
+            // New Moon
+            case 0:
+                moonPhaseText.setText(moonPhase.get(0));
+                ivMoon.setImageResource(R.drawable.mp0);
+                break;
+            // Waxing Crescent
+            case 3:
+                moonPhaseText.setText(moonPhase.get(1));
+                ivMoon.setImageResource(R.drawable.mp3);
+                break;
+            case 7:
+                moonPhaseText.setText(moonPhase.get(1));
+                ivMoon.setImageResource(R.drawable.mp7);
+                break;
+            case 10:
+                moonPhaseText.setText(moonPhase.get(1));
+                ivMoon.setImageResource(R.drawable.mp10);
+                break;
+            case 13:
+                moonPhaseText.setText(moonPhase.get(1));
+                ivMoon.setImageResource(R.drawable.mp13);
+                break;
+            case 17:
+                moonPhaseText.setText(moonPhase.get(1));
+                ivMoon.setImageResource(R.drawable.mp17);
+                break;
+            case 20:
+                moonPhaseText.setText(moonPhase.get(1));
+                ivMoon.setImageResource(R.drawable.mp20);
+                break;
 
+            // First Quarter
+            case 23:
+                moonPhaseText.setText(moonPhase.get(2));
+                ivMoon.setImageResource(R.drawable.mp23);
+                break;
+
+            // Waxing Gibbous
+            case 27:
+                moonPhaseText.setText(moonPhase.get(2));
+                ivMoon.setImageResource(R.drawable.mp27);
+                break;
+            case 30:
+                moonPhaseText.setText(moonPhase.get(3));
+                ivMoon.setImageResource(R.drawable.mp30);
+                break;
+            case 33:
+                moonPhaseText.setText(moonPhase.get(3));
+                ivMoon.setImageResource(R.drawable.mp33);
+                break;
+            case 37:
+                moonPhaseText.setText(moonPhase.get(3));
+                ivMoon.setImageResource(R.drawable.mp37);
+                break;
+            case 40:
+                moonPhaseText.setText(moonPhase.get(3));
+                ivMoon.setImageResource(R.drawable.mp40);
+                break;
+            case 43:
+                moonPhaseText.setText(moonPhase.get(3));
+                ivMoon.setImageResource(R.drawable.mp43);
+                break;
+            case 47:
+                moonPhaseText.setText(moonPhase.get(3));
+                ivMoon.setImageResource(R.drawable.mp50);
+                break;
+
+            // Full Moon
+            case 50:
+                moonPhaseText.setText(moonPhase.get(4));
+                ivMoon.setImageResource(R.drawable.mp50);
+
+                break;
+
+            // Waning Gibbous
+            case 53:
+                moonPhaseText.setText(moonPhase.get(5));
+                ivMoon.setImageResource(R.drawable.mp53);
+                break;
+            case 57:
+                moonPhaseText.setText(moonPhase.get(5));
+                ivMoon.setImageResource(R.drawable.mp57);
+                break;
+            case 60:
+                moonPhaseText.setText(moonPhase.get(5));
+                ivMoon.setImageResource(R.drawable.mp60);
+                break;
+            case 63:
+                moonPhaseText.setText(moonPhase.get(5));
+                ivMoon.setImageResource(R.drawable.mp63);
+                break;
+            case 67:
+                moonPhaseText.setText(moonPhase.get(5));
+                ivMoon.setImageResource(R.drawable.mp67);
+                break;
+            case 70:
+                moonPhaseText.setText(moonPhase.get(5));
+                ivMoon.setImageResource(R.drawable.mp70);
+                break;
+
+            // Last Quarter
+            case 73:
+                moonPhaseText.setText(moonPhase.get(6));
+                ivMoon.setImageResource(R.drawable.mp73);
+                break;
+
+            // Waning Crescent
+            case 77:
+                moonPhaseText.setText(moonPhase.get(6));
+                ivMoon.setImageResource(R.drawable.mp77);
+                break;
+            case 80:
+                moonPhaseText.setText(moonPhase.get(7));
+                ivMoon.setImageResource(R.drawable.mp80);
+                break;
+            case 83:
+                moonPhaseText.setText(moonPhase.get(7));
+                ivMoon.setImageResource(R.drawable.mp83);
+                break;
+            case 87:
+                moonPhaseText.setText(moonPhase.get(7));
+                ivMoon.setImageResource(R.drawable.mp87);
+                break;
+            case 90:
+                moonPhaseText.setText(moonPhase.get(7));
+                ivMoon.setImageResource(R.drawable.mp90);
+                break;
+            case 93:
+                moonPhaseText.setText(moonPhase.get(7));
+                ivMoon.setImageResource(R.drawable.mp93);
+                break;
+            case 97:
+                moonPhaseText.setText(moonPhase.get(7));
+                ivMoon.setImageResource(R.drawable.mp97);
+                break;
+            default:
+                moonPhaseText.setText("Moon Phase");
+                break;
+        }
+        updateImage(currentPercentage);
+    }
+
+//    public static Bitmap ImageViaAssets(String fileName) {
+//
+//        AssetManager assetmanager = getContext().getAssets();
+//        InputStream is = null;
+//        try {
+//            is = assetmanager.open(fileName);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        Bitmap bitmap = BitmapFactory.decodeStream(is);
+//        return bitmap;
+//    }
+
+    private static void updateImage(double cpercent) {
+
+        num = (int) cpercent;
+        System.out.println("//////////////////////////////////////////////////////////////////////////// TEST ");
+
+//        AssetManager assetmanager = getAppContext().getAssets();
+//        InputStream is = null;
+//        try {
+//            is = assetmanager.open("north - Copy/"+num+".png");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        Bitmap bitmap = BitmapFactory.decodeStream(is);
+//        ivMoon.setImageBitmap(bitmap);
+//        ivMoon.setImageDrawable(Drawable.createFromPath("mp50.png"));
+//        ivMoon.setImageResource(R.drawable.mp50);
+
+    }
     // John Horton Conways algorithm to find lunar phases
 
     // In the 20th century, calculate the remainder upon dividing the
@@ -172,36 +402,27 @@ public class PhasesFragment extends Fragment {
     // for the slight variations in the lengths of months; what I have
     // given should be good to +/- a day or so.
     public static final int Conway(int year, int month, int day) {
-        double r = (double)(year % 100);
-        r %= (double)19;
-        if (r > (double)9) {
-            r -= (double)19;
+        double r = (double) (year % 100);
+        r %= (double) 19;
+        if (r > (double) 9) {
+            r -= (double) 19;
         }
 
-        r = ((r * (double)11) % (double)30) + (double)month + (double)day;
+        r = ((r * (double) 11) % (double) 30) + (double) month + (double) day;
         if (month < 3) {
-            r += (double)2;
+            r += (double) 2;
         }
 
         if (year < 2000) {
-            r -= (double)4;
+            r -= (double) 4;
         } else {
             r -= 8.3D;
         }
 
         double var6 = r + 0.5;
         boolean var8 = false;
-        r = Math.floor(var6) % (double)30;
-        return r < (double)0 ? (int)(r + (double)30) : (int)r;
-
-//        var r = year % 100;
-//        r %= 19;
-//        if (r>9){ r -= 19;}
-//        r = ((r * 11) % 30) + parseInt(month) + parseInt(day);
-//        if (month<3){r += 2;}
-//        r -= ((year<2000) ? 4 : 8.3);
-//        r = Math.floor(r+0.5)%30;
-//        return (r < 0) ? r+30 : r;
+        r = Math.floor(var6) % (double) 30;
+        return r < (double) 0 ? (int) (r + (double) 30) : (int) r;
     }
 
     public static void getDates(int dayOfMonth, int month, int year) {
