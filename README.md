@@ -55,4 +55,5 @@ I started developing this project on the 2nd of Januray and here is what is done
 + Changed the default theme to DayNight(Dark Themed)
 + Moon Phases now shows the type of moon on any given date
 + Moon Phases now shows how illumination it will be at night
++ Moon Phases now updates the correct image corresponding to the date
 ```
