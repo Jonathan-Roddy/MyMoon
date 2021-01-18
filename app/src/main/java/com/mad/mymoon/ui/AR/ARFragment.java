@@ -15,7 +15,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.mad.mymoon.AugmentedEarth;
 import com.mad.mymoon.AugmentedMoon;
+import com.mad.mymoon.AugmentedPortal;
 import com.mad.mymoon.Dashboard;
 import com.mad.mymoon.R;
 
@@ -25,6 +27,8 @@ public class ARFragment extends Fragment {
 
     // Variables
     Button ARMoon;
+    Button ARPortal;
+    Button AREarth;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -49,11 +53,27 @@ public class ARFragment extends Fragment {
             }
         });
 
+        // Button to call the AR Scene for the Portal
+        ARPortal = (Button)root.findViewById(R.id.btnARPortal);
+        ARPortal.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AugmentedPortal.class);
+                startActivity(intent);
+            }
+        });
 
+        // Button to call the AR Scene for the Earth
+        AREarth = (Button)root.findViewById(R.id.btnAREarth);
+        AREarth.setOnClickListener(new View.OnClickListener() {
 
-
-
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AugmentedEarth.class);
+                startActivity(intent);
+            }
+        });
 
 
         return root;
