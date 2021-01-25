@@ -57,3 +57,10 @@ I started developing this project on the 2nd of Januray and here is what is done
 + Moon Phases now shows how illumination it will be at night
 + Moon Phases now updates the correct image corresponding to the date
 ```
+
+Week  - 20/01/2021
+I started developing this project on the 2nd of Januray and here is what is done to date.
+```diff
++ Create diagrams to be added into the Design & Implementation chapter
++ Working on above chapters for document deadline
+```
