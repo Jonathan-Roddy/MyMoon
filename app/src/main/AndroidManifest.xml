@@ -19,6 +19,8 @@
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"></activity>
         <activity android:name=".AugmentedMoon" />
+        <activity android:name=".AugmentedEarth" />
+        <activity android:name=".AugmentedPortal" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
