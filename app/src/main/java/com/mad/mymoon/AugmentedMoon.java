@@ -81,6 +81,7 @@ public class AugmentedMoon extends AppCompatActivity {
         ArFragment arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
 
+
         // Download button action
         findViewById(R.id.downloadBtn)
                 .setOnClickListener(v -> {

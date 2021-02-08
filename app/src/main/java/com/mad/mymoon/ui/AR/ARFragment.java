@@ -34,13 +34,13 @@ public class ARFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ARViewModel = new ViewModelProvider(this).get(ARViewModel.class);
         View root = inflater.inflate(R.layout.fragment_ar, container, false);
-        final TextView textView = root.findViewById(R.id.text_phases);
-        ARViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        //final TextView textView = root.findViewById(R.id.text_phases);
+//        ARViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
 
         // Button to call the AR Scene for the Moon
         ARMoon = (Button)root.findViewById(R.id.btnARMoon);
