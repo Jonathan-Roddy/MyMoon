@@ -54,6 +54,7 @@ public class HomeFragment extends Fragment {
 
         });
 
+        /// Testing
 
         FirebaseDatabase database2 = FirebaseDatabase.getInstance();
         DatabaseReference myRef2 = database2.getReference("NewUpdate");
