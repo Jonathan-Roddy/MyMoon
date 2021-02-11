@@ -22,8 +22,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -47,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.splash_screen);
+
+        System.out.println("///////////////// To Firebase");
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /////////////////////////////////////////////////////////////////
+        System.out.println("///////////////// To database" + database);
+        /////////////////////////////////////////////////////////////////
+        DatabaseReference myRef = database.getReference("Peter");
+        System.out.println("///////////////// To myRef" + myRef);
+////        /////////////////////////////////////////////////////////////
+        myRef.setValue("Hey PEter");
 
         // Animations
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
@@ -72,26 +80,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }, splash_screen);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("");
 
-        // Read from the database
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                System.out.println("///////////////////////////" + value);
-                Log.d(TAG, "Value is: " + value);
-            }
 
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
 
 
     }

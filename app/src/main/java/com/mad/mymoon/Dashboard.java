@@ -9,8 +9,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Dashboard extends AppCompatActivity {
 
