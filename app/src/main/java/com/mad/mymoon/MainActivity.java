@@ -1,8 +1,5 @@
 package com.mad.mymoon;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +9,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.splash_screen);
+
+        System.out.println("///////////////// To Firebase");
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /////////////////////////////////////////////////////////////////
+        System.out.println("///////////////// To database" + database);
+        /////////////////////////////////////////////////////////////////
+
 
         // Animations
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
@@ -54,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }, splash_screen);
+
+
+
 
 
     }
