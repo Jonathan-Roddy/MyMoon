@@ -4,41 +4,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/GreyBackground"
     tools:context=".ui.AR.ARFragment">
 
-    <Button
-        android:id="@+id/btnARMoon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click for AR Moon"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="402dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="64dp"
+        android:background="@color/GreyBackground"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.206"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279" />
+        app:layout_constraintVertical_bias="1.0">
 
-    <Button
-        android:id="@+id/btnARPortal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="280dp"
-        android:text="Click for AR Portal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.661"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnAREarth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click for AR Earth"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnARPortal"
-        app:layout_constraintVertical_bias="0.233" />
+            <TextView
+                android:id="@+id/tvMoonAR"
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="132dp"
+                android:textAlignment="center"
+                android:textColor="@color/GreyTextValue"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInfoImport" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="#000000"
+                app:layout_constraintBottom_toTopOf="@+id/tvMoonAR"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInfoImport"
+                app:layout_constraintVertical_bias="0.669" />
+
+            <Button
+                android:id="@+id/btnARMoon"
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:background="@color/greyButton"
+                android:text="@string/click_for_ar_moon"
+                android:textColor="@color/GreyTextValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMoonAR" />
+
+            <Button
+                android:id="@+id/btnARPortal"
+                android:layout_width="309dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="32dp"
+                android:background="@color/greyButton"
+                android:text="@string/click_for_ar_portal"
+                android:textColor="@color/GreyTextValue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPortalAR"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tvPortalAR"
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:textAlignment="center"
+                android:textColor="@color/GreyTextValue"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAREarth" />
+
+            <Button
+                android:id="@+id/btnAREarth"
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:background="@color/greyButton"
+                android:text="@string/click_for_ar_earth"
+                android:textColor="@color/GreyTextValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEarthAR" />
+
+            <TextView
+                android:id="@+id/tvEarthAR"
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:textAlignment="center"
+                android:textColor="@color/GreyTextValue"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnARMoon" />
+
+            <TextView
+                android:id="@+id/tvInfoAR"
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:textAlignment="center"
+                android:textColor="@color/GreyTextValue"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvInfoImport"
+                android:layout_width="309dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textAlignment="center"
+                android:textColor="@color/GreyTextValue"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInfoAR" />
+
+            <Button
+                android:id="@+id/btnDemo"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@color/greyButton"
+                android:text="@string/click_for_instructions"
+                android:textColor="@color/GreyTextValue"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInfoImport" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mad.mymoon">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.camera.ar" />
@@ -17,10 +19,14 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Dashboard"
-            android:label="@string/title_activity_dashboard"></activity>
-        <activity android:name=".AugmentedMoon" />
-        <activity android:name=".AugmentedEarth" />
-        <activity android:name=".AugmentedPortal" />
+            android:label="@string/title_activity_dashboard" />
+        <activity android:name=".ui.AR.AugmentedMoon" />
+        <activity android:name=".ui.AR.AugmentedEarth" />
+        <activity android:name=".ui.AR.AugmentedPortal" />
+        <activity android:name=".ui.Discover.DiscoveryMoon" />
+        <activity android:name=".ui.Discover.DiscoveryMission" />
+        <activity android:name=".ui.Discover.DiscoveryVideo" />
+        <activity android:name=".ui.Discover.DiscoveryImage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +42,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
-
 
 </manifest>

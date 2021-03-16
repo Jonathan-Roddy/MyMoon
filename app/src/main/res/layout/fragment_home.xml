@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/GreyBackground"
     android:verticalScrollbarPosition="right"
     tools:context=".ui.home.HomeFragment">
 
@@ -31,6 +32,7 @@
                 android:layout_marginTop="32dp"
                 android:text="Welcome"
                 android:textAlignment="center"
+                android:textColor="@color/GreyTextValue"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +47,7 @@
                 android:layout_marginTop="64dp"
                 android:text="Whats New"
                 android:textAlignment="center"
+                android:textColor="@color/GreyTextValue"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -56,15 +59,16 @@
                 android:id="@+id/txtJumpTo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
+                android:layout_marginBottom="52dp"
                 android:text="Jump To"
                 android:textAlignment="center"
+                android:textColor="@color/GreyTextValue"
                 android:textSize="30sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/btnEarth"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.102"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtListWhatsNew" />
+                app:layout_constraintHorizontal_bias="0.088"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <View
                 android:layout_width="0dp"
@@ -83,37 +87,25 @@
                 android:layout_width="0dp"
                 android:layout_height="2dp"
                 android:layout_marginStart="64dp"
-                android:layout_marginTop="32dp"
                 android:layout_marginEnd="64dp"
+                android:layout_marginBottom="36dp"
                 android:background="#000000"
+                app:layout_constraintBottom_toTopOf="@+id/txtJumpTo"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtListWhatsNew" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/txtListWelcome"
                 android:layout_width="348dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:text="123"
+                android:textColor="@color/GreyTextValue"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
-
-            <TextView
-                android:id="@+id/txtListWhatsNew"
-                android:layout_width="348dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:lineSpacingExtra="10sp"
-                android:text="TextView"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.493"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtWhatsNew" />
 
             <Button
                 android:id="@+id/btnContactUs"
@@ -166,8 +158,19 @@
                 app:layout_constraintEnd_toStartOf="@+id/btnEarth"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtJumpTo"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/txtJumpTo" />
+
+            <ListView
+                android:id="@+id/listViewHome"
+                android:layout_width="347dp"
+                android:layout_height="350dp"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:listSelector="@android:color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/view3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWhatsNew" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

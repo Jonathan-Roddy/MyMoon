@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">MyMoon</string>
-    <string name="todo">TODO</string>
     <string name="lets_go_explore">Lets go explore!</string>
     <string name="my_moon">My Moon</string>
     <string name="title_activity_dashboard">MainActivity</string>
@@ -9,5 +8,38 @@
     <string name="title_ar">AR</string>
     <string name="title_discover">Discover</string>
     <string name="title_phases">Moon Phases</string>
+    <string name="player_1">123</string>
+    <string name="save">456</string>
+    <string name="please_input_a_name_for_player_1">test</string>
+    <string name="player_2">test</string>
+    <string name="please_input_a_name_for_player_2">123</string>
+    <string name="title_activity_list_view_item_settings">ListViewItemSettings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo">TODO</string>
+    <string name="download">Download</string>
+    <string name="click_for_ar_moon">Click for AR Moon</string>
+    <string name="click_for_ar_portal">Click for AR Portal</string>
+    <string name="click_for_ar_earth">Click for AR Earth</string>
+    <string name="click_for_instructions">Click for Instructions</string>
+    <string name="ar_info">AR Info</string>
+    <string name="_1_use_the_rear_camera_to_slowly_scan_your_surrounds">1) Use the rear camera to slowly scan your surrounds</string>
+    <string name="_2_press_the_download_button_to_get_the_3d_model_and_wait_until_model_is_built">2) Press the download button to get the 3D model and wait until model is built</string>
+    <string name="_3_when_you_see_white_dots_on_the_floor_tap_on_any_of_those_to_place_the_model">3) When you see white dots on the floor, tap on any of those to place the model</string>
+    <string name="_4_you_can_pinch_the_model_with_two_fingers_in_order_to_both_scale_and_rotate_the_model">4) You can pinch the model with two fingers in order to both scale and rotate the model</string>
+    <string name="email_body">Email Body</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="clear">Clear</string>
+    <string name="subject">Subject</string>
+    <string name="please_enter_email_details">Please enter email details :</string>
+    <string name="send">Send</string>
 
 </resources>

@@ -1,32 +1,19 @@
 package com.mad.mymoon;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static android.content.ContentValues.TAG;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -51,10 +38,7 @@ public class MainActivity extends AppCompatActivity {
         /////////////////////////////////////////////////////////////////
         System.out.println("///////////////// To database" + database);
         /////////////////////////////////////////////////////////////////
-        DatabaseReference myRef = database.getReference("Peter");
-        System.out.println("///////////////// To myRef" + myRef);
-////        /////////////////////////////////////////////////////////////
-        myRef.setValue("Hey PEter");
+
 
         // Animations
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);

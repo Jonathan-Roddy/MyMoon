@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/GreyBackground"
+    tools:context=".ui.Discover.DiscoveryMoon">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="268dp"
+        android:layout_height="51dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="72dp"
+        android:text="Click the speach button beside the facts for it to be read aloud"
+        android:textAlignment="center"
+        android:textColor="@color/GreyTextValue"
+        android:textSize="14sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVFact"
+        android:layout_width="match_parent"
+        android:layout_height="704dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="-43dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

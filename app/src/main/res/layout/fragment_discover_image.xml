@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/GreyBackground"
+    android:orientation="vertical"
+    tools:context=".ui.Discover.DiscoveryImage">
+
+    <Gallery
+        android:id="@+id/gallery"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_marginTop="32dp">
+
+    </Gallery>
+
+    <com.mad.mymoon.TouchImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="570dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/a_moon_earthside_map" />
+
+    <TextView
+        android:id="@+id/txtImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Atlas of the Lunar Surface: Earth Side"
+        android:textAlignment="center"
+        android:textColor="@color/GreyTextValue"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"/>
+
+</LinearLayout>
