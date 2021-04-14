@@ -108,50 +108,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
 
             <Button
-                android:id="@+id/btnContactUs"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:text="Contact Us"
-                android:textAlignment="center"
-                android:textSize="14sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/btnEarth"
-                app:layout_constraintEnd_toStartOf="@+id/btnRateUs"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnEarth" />
-
-            <Button
-                android:id="@+id/btnRateUs"
-                android:layout_width="88dp"
-                android:layout_height="48dp"
-                android:layout_marginEnd="16dp"
-                android:text="Rate Us"
-                android:textAlignment="center"
-                android:textSize="14sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/btnContactUs"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/btnContactUs" />
-
-            <Button
                 android:id="@+id/btnEarth"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:text="Earth"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:text="AR Earth"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/btnMoon"
-                app:layout_constraintEnd_toStartOf="@+id/btnContactUs"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/btnMoon" />
 
             <Button
                 android:id="@+id/btnMoon"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
-                android:text="Moon"
+                android:text="AR Moon"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"

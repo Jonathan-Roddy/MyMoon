@@ -20,9 +20,9 @@ public class ARFragment extends Fragment {
     private ARViewModel ARViewModel;
 
     // Variables
-    Button btnDemo,ARMoon, ARPortal, AREarth;
+    Button btnDemo,ARMoon, ARMoon2, AREarth;
 
-    TextView tvInfoAR,tvInfoImport, tvMoonAR,tvEarthAR,tvPortalAR;
+    TextView tvInfoAR,tvInfoImport, tvMoonAR,tvEarthAR, tvMoon2AR;
     // Below edittext and button are all exist in the popup dialog view.
     private View popupInputDialogView = null;
 
@@ -81,6 +81,19 @@ public class ARFragment extends Fragment {
             }
         });
 
+        tvMoon2AR = (TextView)root.findViewById(R.id.tvMoon2AR);
+        tvMoon2AR.setText("See the Moon now without any flags in your way.");
+        // Button to call the AR Scene for the Portal
+        ARMoon2 = (Button)root.findViewById(R.id.btnARMoon2);
+        ARMoon2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AugmentedMoon_NoFlags.class);
+                startActivity(intent);
+            }
+        });
+
         tvEarthAR = (TextView)root.findViewById(R.id.tvEarthAR);
         tvEarthAR.setText("Have a look at the Earth and see what places you recognise\n");
         // Button to call the AR Scene for the Earth
@@ -94,22 +107,7 @@ public class ARFragment extends Fragment {
             }
         });
 
-        tvPortalAR = (TextView)root.findViewById(R.id.tvPortalAR);
-        tvPortalAR.setText("Transport yourself to the Lunar Surface" +
-                "\n WORK IN PROGRESS\n");
-        // Button to call the AR Scene for the Portal
-        ARPortal = (Button)root.findViewById(R.id.btnARPortal);
-        ARPortal.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), AugmentedPortal.class);
-                startActivity(intent);
-            }
-        });
-
         return root;
-
     }
 
     /* Initialize popup dialog view and ui controls in the popup dialog. */

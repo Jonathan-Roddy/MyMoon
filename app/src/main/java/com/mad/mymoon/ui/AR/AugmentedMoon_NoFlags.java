@@ -39,7 +39,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AugmentedMoon extends AppCompatActivity {
+public class AugmentedMoon_NoFlags extends AppCompatActivity {
 
     private ModelRenderable renderable;
     private TransformationSystem transformationSystem;
@@ -57,6 +57,7 @@ public class AugmentedMoon extends AppCompatActivity {
     PopupWindow popUp;
     boolean click = true;
 
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,30 +68,20 @@ public class AugmentedMoon extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Device not supported", Toast.LENGTH_LONG).show();
         }
 
+        // Display Pop up dialog
+
         // Call layout
         setContentView(R.layout.activity_main);
-
-//         Display Pop up dialog
-//        PRDownloader.initialize(getApplicationContext());
-
-//        // Enabling database for resume support even after the application is killed:
-//        PRDownloaderConfig config = PRDownloaderConfig.newBuilder()
-//                .setDatabaseEnabled(true)
-//                .build();
-//        PRDownloader.initialize(getApplicationContext(), config);
 
         // Initialise connection with Firebase
         FirebaseApp.initializeApp(this);
 
         // Grabbing Moon object from FirebaseStorage
         FirebaseStorage storage = FirebaseStorage.getInstance();
-//        StorageReference modelRef = storage.getReference().child("Moon.glb");
-        StorageReference modelRef = storage.getReference().child("Moon_flag.glb");
+        StorageReference modelRef = storage.getReference().child("Moon.glb");
+//        StorageReference modelRef = storage.getReference().child("Portal.glb");
 
         ArFragment arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
-
-        ProgressDialog progressdialog = new ProgressDialog(this);
-        progressdialog.setMessage("Please Wait....");
 
 
         // Download button action
@@ -103,7 +94,7 @@ public class AugmentedMoon extends AppCompatActivity {
             download.setVisibility(View.GONE);
 
             ////////////////////////////////////////////////////////////////////////////////////
-            progressDialog = new ProgressDialog(AugmentedMoon.this);
+            progressDialog = new ProgressDialog(AugmentedMoon_NoFlags.this);
             progressDialog.setMax(100); // Progress Dialog Max Value
             progressDialog.setMessage("Loading..."); // Setting Message
             progressDialog.setTitle("Progress"); // Setting Title
@@ -141,6 +132,8 @@ public class AugmentedMoon extends AppCompatActivity {
                 e.printStackTrace();
             }
             buildModel(file);
+
+
 
 
             ////////////////////////////////////////////////////////////////////////////////////
@@ -268,4 +261,6 @@ public class AugmentedMoon extends AppCompatActivity {
 
 
 }
+
+
 
