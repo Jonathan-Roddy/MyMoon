@@ -41,5 +41,6 @@
     <string name="subject">Subject</string>
     <string name="please_enter_email_details">Please enter email details :</string>
     <string name="send">Send</string>
+    <string name="click_for_moon_with_no_flags">Click for Moon with no flags</string>
 
 </resources>

@@ -142,8 +142,6 @@ public class AugmentedMoon extends AppCompatActivity {
             }
             buildModel(file);
 
-            
-
 
             ////////////////////////////////////////////////////////////////////////////////////
 
@@ -262,6 +260,7 @@ public class AugmentedMoon extends AppCompatActivity {
                 .thenAccept(modelRenderable -> {
                     Toast.makeText(this, "Model has been built, Please select the surface", Toast.LENGTH_SHORT).show();
                     renderable = modelRenderable;
+                    progressDialog.dismiss();
                 });
 //        progressdialog.dismiss();
 
