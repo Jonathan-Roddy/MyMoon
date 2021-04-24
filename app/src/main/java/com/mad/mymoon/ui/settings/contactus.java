@@ -91,12 +91,11 @@ public class contactus extends Fragment implements View.OnCreateContextMenuListe
                                     Log.i("Send email", "");
                                     String[] TO = {"mymoonjonathan@gmail.com"};
                                     String[] CC = {""};
-                                    Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
 
                                     emailIntent.setData(Uri.parse("mailto:"));
                                     emailIntent.setType("text/plain");
                                     emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-                                    emailIntent.putExtra(Intent.EXTRA_CC, CC);
                                     emailIntent.putExtra(Intent.EXTRA_SUBJECT, etvSubject.getText().toString());
                                     emailIntent.putExtra(Intent.EXTRA_TEXT,
                                             "Contact Name: " + etvContactName.getText().toString() +

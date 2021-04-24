@@ -86,6 +86,7 @@ public class AugmentedMoon extends AppCompatActivity {
         FirebaseStorage storage = FirebaseStorage.getInstance();
 //        StorageReference modelRef = storage.getReference().child("Moon.glb");
         StorageReference modelRef = storage.getReference().child("Moon_flag.glb");
+//        StorageReference modelRef = storage.getReference().child("untitled.glb");
 
         ArFragment arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
@@ -106,8 +107,8 @@ public class AugmentedMoon extends AppCompatActivity {
             progressDialog = new ProgressDialog(AugmentedMoon.this);
             progressDialog.setMax(100); // Progress Dialog Max Value
             progressDialog.setMessage("Loading..."); // Setting Message
-            progressDialog.setTitle("Progress"); // Setting Title
-            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL); // Progress Dialog Style Horizontal
+            progressDialog.setTitle("Please wait while model is downloading"); // Setting Title
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Horizontal
 
             progressDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel",
 
@@ -124,10 +125,10 @@ public class AugmentedMoon extends AppCompatActivity {
                     });
             progressDialog.show(); // Display Progress Dialog
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             File file = null;
             try {
-                file = File.createTempFile("Moon_flag", "glb");
+                file = File.createTempFile("untitled", "glb");
                 File finalFile = file;
                 modelRef.getFile(file).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                     @Override
@@ -141,7 +142,7 @@ public class AugmentedMoon extends AppCompatActivity {
                 e.printStackTrace();
             }
             buildModel(file);
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             ////////////////////////////////////////////////////////////////////////////////////
 
@@ -250,12 +251,12 @@ public class AugmentedMoon extends AppCompatActivity {
                 .setSource(this, Uri.parse(file.getPath()), RenderableSource.SourceType.GLB)
                 .setRecenterMode(RenderableSource.RecenterMode.ROOT)
                 .build();
-//        System.out.println("////////////////////////////////////////////" + renderableSource.toString());
+        System.out.println("////////////////////////////////////////////" + renderableSource.toString());
 
         ModelRenderable
                 .builder()
                 .setSource(this, renderableSource)
-                .setRegistryId(file.getPath())
+//                .setRegistryId(file.getPath())
                 .build()
                 .thenAccept(modelRenderable -> {
                     Toast.makeText(this, "Model has been built, Please select the surface", Toast.LENGTH_SHORT).show();

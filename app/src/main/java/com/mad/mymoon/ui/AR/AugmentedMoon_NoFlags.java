@@ -97,8 +97,8 @@ public class AugmentedMoon_NoFlags extends AppCompatActivity {
             progressDialog = new ProgressDialog(AugmentedMoon_NoFlags.this);
             progressDialog.setMax(100); // Progress Dialog Max Value
             progressDialog.setMessage("Loading..."); // Setting Message
-            progressDialog.setTitle("Progress"); // Setting Title
-            progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL); // Progress Dialog Style Horizontal
+            progressDialog.setTitle("Please wait while model is downloading"); // Setting Title
+            progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Progress Dialog Style Horizontal
 
             progressDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel",
 
