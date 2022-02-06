@@ -29,28 +29,17 @@ Wireframe:
 + SceneForm
 + Blender
 
-
 ***
-
-*****************************************************************
-**                      Final Year Project                     **
-*****************************************************************
- 
-  #-----------------------------------------------------------#  
-  #    TITLE : MyMoon Basic ReadMe FileTake Home Assignment   #  
-  #               AUTHOR : Jonathan Roddy                     #   
-  #-----------------------------------------------------------#  
- 
 +   DESCRIPTION                                                  
-+==============================================================+
+
 This ReadMe file is to help you in setting up the environment 
 in which you might be able to insitate an instance of my Project.
 
 Github URL :https://github.com/Jonathan-Roddy/MyMoon
  
- 
-+   Folder Contents                                                  
-+==============================================================+
+ ***
++   Folder Contents                                             
+
 - "Blender Files" - All Blender files for Moon and the earth.
 	- All exported models that can be viewed using Windows 10 3D 
 	  model viewer.
@@ -64,9 +53,9 @@ Github URL :https://github.com/Jonathan-Roddy/MyMoon
 - "MyMoon_Poster" which is the poster I used during the 
    interview
  
-
+***
 +   Notes                                                  
-+==============================================================+
+
 - You will need to have Android Studio in order to open the 
   project file completly.
 - You may be able to view the source code using another IDE or 
@@ -81,8 +70,9 @@ Github URL :https://github.com/Jonathan-Roddy/MyMoon
 - Cloud database, Firebase, has been set up to allow all devices
   to read so no issues will arrise there.
   
-+   Steps to open Source Code                                                  
-+============================================================
+***  
++   Steps to open Source Code                                 
+
 1) If you wish to install the application directly you may do 
    so by sending the APK file to your personal Android device. 
    You will need to configure your device to allow 
@@ -106,9 +96,11 @@ REF: https://www.gsrikar.com/2020/03/create-emulator-android-studio.html
   
    Once You have an Emulator you can run the application on 
    that device you have created.
-   
-+   Steps to open 3D Models outside of Android device                                                 
-+============================================================
+ 
+ ***
+ 
++   Steps to open 3D Models outside of Android device         
+
  - You may open the entire 3D models using Blender. Blender is 
    a free downloadable software that I used to create these 
    models.
@@ -116,6 +108,4 @@ REF: https://www.blender.org/download/
 
  - Windows 10 machines have a software called "3D Viewer" that 
    can be used to open the models as well
- 
-+   END OF FILE                                                  
-+==============================================================+
+         
