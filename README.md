@@ -106,67 +106,12 @@ REF: https://www.blender.org/download/
 
 ### Design's
 
-+  Wireframe: 
- <img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Moon_DrawIO.png" align="left" height="50%" width="50%" > 
- <hr>
-
-***
-
-+  Dashboards:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/Dashboard.jpg " align="left" height="50%" width="50%" >
- <hr>
-***
-
-+  Contact Form:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/Contact%20Form.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR.jpg" align="left" height="50%" width="50%" >
-
-***
-+  AR rules:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20rules.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR Setup:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Setup.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR Vector Points:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Vector%20Points.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR Download:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Download.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR Model Built:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Model%20Built.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR Moon Flags:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Moon%20Flags.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR Moon Close-Up:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Moon%20Close-Up.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR Moon NoFlags:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Moon%20NoFlags.jpg" align="left" height="50%" width="50%" >
-
-***
-
-+  AR Earth:
-<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Earth.jpg" align="left" height="50%" width="50%" >
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Moon_DrawIO.png" align="left" height="50%" width="50%" >  Wireframe|  <img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/Dashboard.jpg " align="left" height="50%" width="50%" > Dashboards |<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/Contact%20Form.jpg" align="left" height="50%" width="50%" > Contact Form |
+|<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR.jpg" align="left" height="50%" width="50%" > AR:  |  <img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20rules.jpg" align="left" height="50%" width="50%" > AR rules:|<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Setup.jpg" align="left" height="50%" width="50%" > AR Setup|
+|<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Vector%20Points.jpg" align="left" height="50%" width="50%" > AR Vector Points |  <img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Download.jpg" align="left" height="50%" width="50%" > AR Download |<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Model%20Built.jpg" align="left" height="50%" width="50%" > AR Model Built|
+|<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Moon%20Flags.jpg" align="left" height="50%" width="50%" > AR Moon Flags |  <img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Moon%20Close-Up.jpg" align="left" height="50%" width="50%" > AR Moon Close-Up |<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Moon%20NoFlags.jpg" align="left" height="50%" width="50%" > AR Moon NoFlags|
+|<img src="https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Images/AR%20Earth.jpg" align="left" height="50%" width="50%" > AR Earth |||
 
 ***
