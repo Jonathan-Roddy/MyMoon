@@ -13,13 +13,6 @@ MyMoon is an Android application that utilised both Augmented Reality and Text-t
 - Utilise Text-to-Speech Libary to help aid with the overall learning.
 
 ***
-
-### Design's
-
-Wireframe: 
-![Basic Wireframe](https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Moon_DrawIO.png "Wireframe")
-
-***
 ### Technologies Used
 
 + Android Studio (IDE) 
@@ -108,4 +101,13 @@ REF: https://www.blender.org/download/
 
  - Windows 10 machines have a software called "3D Viewer" that 
    can be used to open the models as well
+
+***
+
+### Design's
+
+Wireframe: 
+![Basic Wireframe](https://github.com/Jonathan-Roddy/MyMoon/blob/master/Assets/Moon_DrawIO.png "Wireframe")
+
+
          
